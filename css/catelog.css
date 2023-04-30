@@ -1,0 +1,31 @@
+#modal_views {
+  overflow: auto;
+}
+
+.btn_actions button {
+  padding: 4px 8px;
+  border-radius: 18px;
+}
+.btn_actions button:nth-child(1) {
+  background-color: rgba(0, 172, 0, 0.2);
+}
+.btn_actions button:nth-child(2) {
+  background-color: rgba(224, 240, 0, 0.2);
+}
+.btn_actions button:nth-child(3) {
+  background-color: rgba(8, 22, 224, 0.5);
+}
+.btn_actions button:nth-child(4) {
+  background-color: rgba(233, 17, 9, 0.5);
+}
+.btn_actions button:hover {
+  opacity: 0.8;
+}
+
+#btn_filter {
+  align-items: start;
+}
+
+.style_text-nomarl {
+  text-transform: lowercase !important;
+}/*# sourceMappingURL=catelog.css.map */

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/catelog.css" />
+
+    <link
+      rel="shortcut icon"
+      href="../images/iconheader.png"
+      type="image/x-icon"
+    />
+    <title>CateLog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+  <body>
+    <div class="app flex text-text font-sans flex-wrap md:flex-nowrap">
+      <section class="w-full flex items-center justify-between px-4 md:hidden">
+        <figure>
+          <img class="max-w-[200px]" src="../images/logo.png" alt="" />
+        </figure>
+        <button id="btn_menu" class="btn_effect">
+          <span></span><span></span><span></span>
+        </button>
+      </section>
+      <!-- Header -->
+      <header
+        id="header_container"
+        class="px-4 border-r-[0.5px] border-gray-600 h-screen fixed menu_mobile md:relative md:basis-1/6 top-0 left-0 bg-gray-900"
+      >
+        <figure class="mb-3">
+          <img class="max-w-[200px]" src="../images/logo.png" alt="" />
+        </figure>
+        <section class="border-y-[0.5px] border-gray-600 py-4">
+          <div class="flex justify-between">
+            <figure class="flex gap-2">
+              <img
+                class="w-10 h-10 object-cover"
+                src="../images/iconheader.png"
+                alt=""
+              />
+              <figcaption>
+                <p>Admin</p>
+                <p>Hoài Nam</p>
+              </figcaption>
+            </figure>
+            <a href="http://">
+              <button
+                class="hover:bg-white hover:text-black ease-in duration-150 rounded-lg py-2 px-3 bg-gray-600 text-white"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+        <nav class="nav_menu">
+          <ul>
+            <li>
+              <a href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/catelog.html">
+                <i class="fa-solid fa-table-cells-large"></i>
+                <span>Catalog</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/html/user.html">
+                <i class="fa-solid fa-user-group"></i>
+                <span>User</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-earth-oceania"></i>
+                <span>Contries</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/showicon.html">
+                <i class="fa-solid fa-icons"></i>
+                <span>Icon</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-regular fa-comment"></i>
+                <span>Comment</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- end Header -->
+
+      <!-- Container -->
+      <main class="md:basis-5/6 basis-full sm:px-8 px-2 py-4 overflow-x-auto">
+        <section
+          class="flex flex-wrap items-center justify-between border-gray-600 border-b-[0.5px] pb-4 mb-3"
+        >
+          <h1 class="text-3xl font-semibold">
+            Catalog <sub class="text-base"> 14 452 total</sub>
+            <a href="/catelog/addfilm" class="ml-3 text-sm">
+              <button
+                class="py-2 px-3 rounded-xl bg-blue-700 text-gray-100 hover:bg-white hover:text-black ease-linear duration-100"
+              >
+                ADD Item
+              </button>
+            </a>
+          </h1>
+
+          <div class="flex items-center ml-auto relative">
+            <section>
+              <p class="text-sm">Sort by:</p>
+              <div class="flex relative">
+                <button class="text-base font-semibold">Filter</button>
+                <button
+                  class="btn_effect min-w-[60px] h-[40px]"
+                  id="btn_filter"
+                >
+                  <span></span><span class="hideElement"></span>
+                  <span></span>
+                </button>
+                <nav class="absolute top-full z-[2]">
+                  <ul
+                    id="sort_container"
+                    class="font-semibold text-slate-300 px-2 hideElement cursor-pointer bg-slate-900 py-3 rounded-2xl"
+                  >
+                    <li>Date Create</li>
+                    <li>Rating</li>
+                    <li>Views</li>
+                  </ul>
+                </nav>
+              </div>
+            </section>
+          </div>
+          <!-- search -->
+          <div
+            class="bg-[#151f30] flex items-center w-full lg:mt-0 lg:w-[350px] relative"
+          >
+            <input
+              type="text"
+              id="search"
+              class="bg-none outline-none flex-1 input_style"
+              placeholder="Find movie / or Id ..."
+              required
+            />
+            <button id="btn_search" class="px-4">
+              <i
+                class="fa-solid fa-magnifying-glass text-blue-600 hover:text-blue-700"
+              ></i>
+            </button>
+            <section
+              id="result_container"
+              class="absolute top-full w-full z-[1] overflow-auto hidden"
+            >
+              <h5 class="bg-gray-800 p-2">
+                Tìm kiếm với ký tự:
+                <span id="input_keyword" class="text-red-600">dsadsasad</span>
+              </h5>
+              <div
+                class="result_search bg-black scroll_settings max-h-[300px] shadow shadow-[#435858]"
+              >
+                <ul>
+                  <li>
+                    <a class="block p-1 hover:bg-slate-950" href="http://">
+                      <figure class="flex gap-x-2">
+                        <img
+                          src="https://movibes.online/avata/636939627d4a2-thon-phe-tinh-khong-thumb.jpg"
+                          width="40"
+                          height="80"
+                          class="object-cover"
+                          alt="thôn phệ tinh không"
+                        />
+                        <figcaption>
+                          <div class="flex flex-col">
+                            <span class="text-base hover:text-yellow-400">
+                              Thôn phệ tinh không</span
+                            >
+                            <span class="text-sm">Swallowed Star</span>
+                          </div>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="block p-1 hover:bg-slate-950" href="http://">
+                      <figure class="flex gap-x-2">
+                        <img
+                          src="https://movibes.online/avata/636939627d4a2-thon-phe-tinh-khong-thumb.jpg"
+                          width="40"
+                          height="80"
+                          class="object-cover"
+                          alt="thôn phệ tinh không"
+                        />
+                        <figcaption>
+                          <div class="flex flex-col">
+                            <span class="text-base hover:text-yellow-400">
+                              Thôn phệ tinh không</span
+                            >
+                            <span class="text-sm">Swallowed Star</span>
+                          </div>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <!-- end search -->
+        </section>
+        <section class="block w-full">
+          <div class="scroll_settings">
+            <table class="table w-full text-center" id="table_container">
+              <thead class="text-base font-bold text-slate-400">
+                <tr>
+                  <td>Id</td>
+                  <td>Title</td>
+                  <td>Rating</td>
+                  <td>Kind</td>
+                  <td>Views</td>
+                  <td>Update Date</td>
+                  <td><div class="my-3">Actions</div></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-[#151F30] border-y-[10px] border-[#131720]">
+                  <td>
+                    <div
+                      class="max-w-[80px] overflow-auto scroll_with-none mt-4 mx-2"
+                    >
+                      #asdsdasdasda
+                    </div>
+                  </td>
+                  <td>
+                    <div class="py-4 mt-2 min-w-fit whitespace-nowrap px-4">
+                      I Dream in Another Language
+                    </div>
+                  </td>
+                  <td><i class="fa-regular fa-star text-blue-800"></i> 4.3</td>
+                  <td><div class="px-2">Fearture</div></td>
+                  <td>
+                    <div class="px-2 whitespace-nowrap">15,000,000</div>
+                  </td>
+                  <td>20/12/2023</td>
+                  <td class="btn_actions">
+                    <div class="min-w-[160px]">
+                      <button class="btn_lock">
+                        <i class="fa-solid fa-lock"></i>
+                      </button>
+                      <button class="btn_view">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn_edit">
+                        <i class="fa-solid fa-pencil"></i>
+                      </button>
+                      <button class="btn_delete">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="bg-[#151F30] border-y-[10px] border-[#131720]">
+                  <td>
+                    <div
+                      class="max-w-[80px] overflow-auto scroll_with-none mt-4 mx-2"
+                    >
+                      #asdsdasdasda
+                    </div>
+                  </td>
+                  <td>
+                    <div class="py-4 mt-2 min-w-fit whitespace-nowrap px-4">
+                      I Dream in Another Language
+                    </div>
+                  </td>
+                  <td><i class="fa-regular fa-star text-blue-800"></i> 4.3</td>
+                  <td><div class="px-2">Fearture</div></td>
+                  <td>
+                    <div class="px-2 whitespace-nowrap">15,000,000 đ</div>
+                  </td>
+                  <td>20/12/2023</td>
+                  <td class="btn_actions">
+                    <div class="min-w-[160px]">
+                      <button class="btn_lock">
+                        <i class="fa-solid fa-lock"></i>
+                      </button>
+                      <button class="btn_view">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn_edit">
+                        <i class="fa-solid fa-pencil"></i>
+                      </button>
+                      <button class="btn_delete">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="bg-[#151F30] border-y-[10px] border-[#131720]">
+                  <td>
+                    <div
+                      class="max-w-[80px] overflow-auto scroll_with-none mt-4 mx-2"
+                    >
+                      #asdsdasdasda
+                    </div>
+                  </td>
+                  <td>
+                    <div class="py-4 mt-2 min-w-fit whitespace-nowrap px-4">
+                      I Dream in Another Language
+                    </div>
+                  </td>
+                  <td><i class="fa-regular fa-star text-blue-800"></i> 4.3</td>
+                  <td><div class="px-2">Fearture</div></td>
+                  <td>
+                    <div class="px-2 whitespace-nowrap">15,000,000 đ</div>
+                  </td>
+                  <td>20/12/2023</td>
+                  <td class="btn_actions">
+                    <div class="min-w-[160px]">
+                      <button class="btn_lock">
+                        <i class="fa-solid fa-lock"></i>
+                      </button>
+                      <button class="btn_view">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn_edit">
+                        <i class="fa-solid fa-pencil"></i>
+                      </button>
+                      <button class="btn_delete">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="paginationjs">
+            <nav>
+              <ul class="flex gap-2 items-center justify-center">
+                <li class="active">
+                  <a href="">1</a>
+                </li>
+                <li>
+                  <a href="">2</a>
+                </li>
+                <li>
+                  <a href="">3</a>
+                </li>
+                <li>
+                  <a href="">4</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </main>
+      <!--End Container -->
+    </div>
+
+    <!-- Modal status  id modal_status if have  hideElement -> hidden else show -->
+    <div
+      id="modal_status"
+      class="modal fixed inset-0 h-screen flex hideElement bg-[rgba(0,0,0,0.6)]"
+    >
+      <section
+        class="max-w-[400px] min-h-[200px] max-h-[400px] rounded-2xl p-7 bg-[#151F30] m-auto relative modal-content"
+      >
+        <h6 class="modal__title text-3xl text-center font-semibold pb-3">
+          Status change
+        </h6>
+        <p class="text-sm text-center">
+          Are you sure about immediately change status?
+        </p>
+        <div class="modal__btns mt-4 flex gap-3">
+          <button
+            class="modal__btn--apply min-w-[160px] bg-[#2f80ed] hover:text-green-700 hover:bg-[#fff] py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Apply
+          </button>
+          <button
+            class="modal__btn--dismiss min-w-[160px] bg-gray-700 hover:text-red-400 py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Dismiss
+          </button>
+        </div>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+  </body>
+  <script type="module" src="../js/catelog.js"></script>
+</html>

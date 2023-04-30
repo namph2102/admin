@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/catelog.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- Select Mutipat -->
+    <link href="../css/mobiscroll.javascript.min.css" rel="stylesheet" />
+    <script src="../js/mobiscroll.javascript.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../images/iconheader.png"
+      type="image/x-icon"
+    />
+    <title>Add Esopide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+    .mbsc-textfield.mbsc-textfield-tags.mbsc-textarea {
+      background-color: #151f30;
+      color: #fff;
+    }
+    .mbsc-ios.mbsc-textfield-tag {
+      background: #38127b;
+    }
+    .mbsc-ios.mbsc-textfield-wrapper-outline {
+      margin: 0;
+    }
+  </style>
+  <body>
+    <div class="app flex text-text font-sans flex-wrap md:flex-nowrap">
+      <section class="w-full flex items-center justify-between px-4 md:hidden">
+        <figure>
+          <img class="max-w-[200px]" src="../images/logo.png" alt="" />
+        </figure>
+        <button id="btn_menu" class="btn_effect">
+          <span></span><span></span><span></span>
+        </button>
+      </section>
+      <!-- Header -->
+      <header
+        id="header_container"
+        class="px-4 border-r-[0.5px] border-gray-600 h-screen fixed menu_mobile md:relative md:basis-1/6 top-0 left-0 bg-gray-900"
+      >
+        <figure class="mb-3">
+          <img class="max-w-[200px]" src="../images/logo.png" alt="" />
+        </figure>
+        <section class="border-y-[0.5px] border-gray-600 py-4">
+          <div class="flex justify-between">
+            <figure class="flex gap-2">
+              <img
+                class="w-10 h-10 object-cover"
+                src="../images/iconheader.png"
+                alt=""
+              />
+              <figcaption>
+                <p>Admin</p>
+                <p>Hoài Nam</p>
+              </figcaption>
+            </figure>
+            <a href="http://">
+              <button
+                class="hover:bg-white hover:text-black ease-in duration-150 rounded-lg py-2 px-3 bg-gray-600 text-white"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+        <nav class="nav_menu">
+          <ul>
+            <li>
+              <a href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/catelog.html">
+                <i class="fa-solid fa-table-cells-large"></i>
+                <span>Catalog</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/html/user.html">
+                <i class="fa-solid fa-user-group"></i>
+                <span>User</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-earth-oceania"></i>
+                <span>Contries</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/showicon.html">
+                <i class="fa-solid fa-icons"></i>
+                <span>Icon</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-regular fa-comment"></i>
+                <span>Comment</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- end Header -->
+
+      <!-- Container -->
+      <main class="md:basis-5/6 basis-full sm:px-8 px-2 py-4 overflow-x-auto">
+        <section
+          class="flex flex-wrap items-center justify-between border-gray-600 border-b-[0.5px] pb-4 mb-3"
+        >
+          <h1 class="text-3xl font-semibold">Add List Esopide</h1>
+        </section>
+        <a class="block p-1 hover:bg-slate-950" href="http://">
+          <figure class="flex gap-x-2">
+            <img
+              src="https://movibes.online/avata/636939627d4a2-thon-phe-tinh-khong-thumb.jpg"
+              width="40"
+              height="40"
+              class="object-cover"
+              alt="Hoài Nam"
+            />
+            <figcaption>
+              <div class="flex flex-col">
+                <span class="text-base hover:text-yellow-400"> Hoài Nam</span>
+                <span class="text-sm">member</span>
+              </div>
+            </figcaption>
+          </figure>
+        </a>
+        <section>
+          <div class="scroll_settings">
+            <table class="table w-full text-center" id="table_container">
+              <thead class="text-base font-bold text-slate-400">
+                <tr>
+                  <td>Esopide</td>
+                  <td>Link Embed</td>
+                  <td>Link M3u8</td>
+                  <td><div class="my-3">Actions</div></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-[#151F30] border-y-[10px] border-[#131720]">
+                  <td>
+                    <div class="">Tập 1</div>
+                  </td>
+                  <td>
+                    <div class="mx-2 py-3 overflow-auto scroll_with-none">
+                      #dsadsadsasaddsasdasadsad
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="mx-2 py-3 overflow-auto scroll_with-none">
+                      #dsadsadsasaddsasdasadsad
+                    </div>
+                  </td>
+
+                  <td class="btn_actions">
+                    <div class="min-w-[160px]">
+                      <button class="btn_view">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn_edit">
+                        <i class="fa-solid fa-pencil"></i>
+                      </button>
+                      <button class="btn_delete">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="paginationjs">
+            <nav>
+              <ul class="flex gap-2 items-center justify-center">
+                <li class="active">
+                  <a href="">1</a>
+                </li>
+                <li>
+                  <a href="">2</a>
+                </li>
+                <li>
+                  <a href="">3</a>
+                </li>
+                <li>
+                  <a href="">4</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <section>
+          <p><span class="text-yellow-400">Lưu ý</span> : Định dạng list</p>
+          <p class="text-sm my-1">
+            2|https://hd.1080phim.com/20230421/38258_48dbf3d8/index.m3u8
+          </p>
+          <p class="text-sm my-1">
+            1|https://hd.1080phim.com/20230421/38257_f2e85e2e/index.m3u8
+          </p>
+          <p class="mt-2">
+            <span class="text-yellow-400">Lưu ý</span> : Định dạng thêm 1 tập
+          </p>
+          <p class="text-sm my-1">
+            1|https://hd.1080phim.com/20230421/38257_f2e85e2e/index.m3u8
+          </p>
+          <p class="text-blue-50">Or</p>
+          <p class="text-sm my-1">
+            Full|https://hd.1080phim.com/20230421/38257_f2e85e2e/index.m3u8
+          </p>
+          <form
+            id="formadd"
+            class="mt-4"
+            action="http://localhost:3000/catelog/viewesopide"
+            method="post"
+          >
+            <input type="text" hidden name="idFilm" value="233223233223" />
+            <div>
+              <label for="listEsopideEmbeded text-base font-bold"
+                >Esopide Embed:</label
+              >
+              <textarea
+                name="listEsopideEmbeded"
+                class="my-2 text-base font-medium py-1 px-3 bg-[#151F30] w-full scroll_settings"
+                id="listEsopideEmbeded"
+                rows="5"
+                placeholder=" Enter your list Esopide or only one ..."
+              ></textarea>
+            </div>
+            <div>
+              <label for="listEsopideStream">Esopide M3u8:</label>
+              <textarea
+                name="listEsopideStream"
+                class="my-2 text-base font-medium py-1 px-3 bg-[#151F30] w-full scroll_settings"
+                id="listEsopideStream"
+                rows="5"
+                placeholder="Enter your list Esopide or only one ..."
+              ></textarea>
+            </div>
+            <div class="basis-full text-center">
+              <button
+                type="submit"
+                class="py-2 px-3 rounded-xl bg-blue-700 text-gray-100 hover:bg-white hover:text-black ease-linear duration-100 sm:w-[200px] w-4/5"
+              >
+                PUSLISH
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+      <!--End Container -->
+    </div>
+
+    <!-- Modal status  id modal_status if have  hideElement -> hidden else show -->
+    <div
+      id="modal_status"
+      class="modal fixed inset-0 h-screen flex hideElement bg-[rgba(0,0,0,0.6)]"
+    >
+      <section
+        class="max-w-[400px] min-h-[200px] max-h-[400px] rounded-2xl p-7 bg-[#151F30] m-auto relative modal-content"
+      >
+        <h6 class="modal__title text-3xl text-center font-semibold pb-3">
+          Status change
+        </h6>
+        <p class="text-sm text-center">
+          Are you sure about immediately change status?
+        </p>
+        <div class="modal__btns mt-4 flex gap-3">
+          <button
+            class="modal__btn--apply min-w-[160px] bg-[#2f80ed] hover:text-green-700 hover:bg-[#fff] py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Apply
+          </button>
+          <button
+            class="modal__btn--dismiss min-w-[160px] bg-gray-700 hover:text-red-400 py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Dismiss
+          </button>
+        </div>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+
+    <!-- Modal status  id modal_status if have class flex -> show else  hidden -> hide -->
+    <div id="modal_views" class="modal fixed inset-0 flex bg-[rgba(0,0,0,0.6)]">
+      <section
+        class="min-h-[80vh] rounded-2xl p-7 bg-[#131720] shadow shadow-[#435858] m-auto relative modal-content"
+      >
+        <h6 class="text-center pb-4 text-2xl">Edit Esopide</h6>
+        <form action="" id="editOne">
+          <input type="text" hidden name="idEsopdie" />
+          <div class="mt-3 mb-1">
+            <label for="esopideView" class="mb-2">Esopide Embed</label>
+            <input
+              type="text"
+              class="input_style"
+              name="embed"
+              id="esopideView"
+              placeholder="Enter Esopide"
+            />
+          </div>
+          <div class="mt-3 mb-1">
+            <label for="esopideViewlinkembed" class="mb-2">Link embed</label>
+            <input
+              type="text"
+              class="input_style"
+              name="linkembed"
+              id="esopideViewlinkembed"
+              placeholder="Enter Esopide"
+            />
+          </div>
+          <div class="my-2"></div>
+          <div class="mt-3 mb-1">
+            <label for="esopidem3u8" class="mb-2">Esopide m3u8</label>
+            <input
+              type="text"
+              class="input_style"
+              name="m3u8"
+              id="esopidem3u8"
+              placeholder="Enter Esopide"
+            />
+          </div>
+          <div class="mt-3 mb-1">
+            <label for="esopideViewlinkm3u8" class="mb-2">Link m3u8</label>
+            <input
+              type="text"
+              class="input_style"
+              name="linkm3u8"
+              id="esopideViewlinkm3u8"
+              placeholder="Enter Esopide"
+            />
+          </div>
+          <div class="basis-full text-center mt-4">
+            <button
+              type="submit"
+              class="py-2 px-3 rounded-xl bg-blue-700 text-gray-100 hover:bg-white hover:text-black ease-linear duration-100 sm:w-[200px] w-4/5"
+            >
+              Edit
+            </button>
+          </div>
+        </form>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+</html>
+
+<script>
+  const formAdd = document.getElementById("formadd");
+  formAdd.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let listEsopideEmbeded = [],
+      listEsopideStream = [];
+    const valueListEsopideEmbeded = this.listEsopideEmbeded.value.trim();
+    const valueListEsopideStream = this.listEsopideStream.value.trim();
+
+    listEsopideEmbeded = CoverToListEsopide(valueListEsopideEmbeded);
+    listEsopideStream = CoverToListEsopide(valueListEsopideStream, 2);
+
+    if (
+      !listEsopideEmbeded ||
+      (listEsopideEmbeded.length > 0 &&
+        listEsopideEmbeded.some((item) => !item))
+    ) {
+      listEsopideEmbeded = [];
+      console.log("Kiểm tra lại dữ liệu embed");
+    }
+    if (
+      !listEsopideStream ||
+      (listEsopideStream.length > 0 && listEsopideStream.some((item) => !item))
+    ) {
+      listEsopideStream = [];
+      console.log("Kiểm tra lại dữ liệu m3u8");
+    }
+    console.log(listEsopideEmbeded);
+    console.log(listEsopideStream);
+    if (listEsopideEmbeded.length >= 0 && listEsopideStream >= 0) {
+      // get data
+    }
+  });
+  function CoverToListEsopide(valueListTextarea, kind) {
+    if (!valueListTextarea.includes("|")) {
+      return false;
+    }
+    if (kind == 2) {
+      if (!valueListTextarea.includes("m3u8")) {
+        return false;
+      }
+    }
+    if (valueListTextarea.includes("\n")) {
+      const list = valueListTextarea.split("\n");
+      return list.map((esopide) => {
+        if (!esopide?.includes("|")) {
+          console.log("List film không đúng theo yêu cầu");
+          return false;
+        }
+        const [es, link] = esopide.split("|");
+        return { esopide: `Tập ${es}`, link };
+      });
+    } else if (valueListTextarea.includes("|")) {
+      const [es, link] = valueListTextarea.split("|");
+      return [{ esopide: `Tập ${es}`, link }];
+    }
+    return false;
+  }
+
+  const formEditOne = document.getElementById("editOne");
+  formEditOne.addEventListener("submit", function (e) {
+    e.preventDefault();
+    console.log(this.embed.value);
+    console.log(this.linkembed.value);
+    console.log(this.m3u8.value);
+    console.log(this.linkm3u8.value);
+  });
+</script>

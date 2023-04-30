@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/catelog.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- Select Mutipat -->
+    <link href="../css/mobiscroll.javascript.min.css" rel="stylesheet" />
+    <script src="../js/mobiscroll.javascript.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../images/iconheader.png"
+      type="image/x-icon"
+    />
+    <title>Edit User</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+    .mbsc-textfield.mbsc-textfield-tags.mbsc-textarea {
+      background-color: #151f30;
+      color: #fff;
+    }
+    .mbsc-ios.mbsc-textfield-tag {
+      background: #38127b;
+    }
+    .mbsc-ios.mbsc-textfield-wrapper-outline {
+      margin: 0;
+    }
+  </style>
+  <body>
+    <div class="app flex text-text font-sans flex-wrap md:flex-nowrap">
+      <section class="w-full flex items-center justify-between px-4 md:hidden">
+        <figure>
+          <img class="max-w-[200px]" src="../images/logo.png" alt="" />
+        </figure>
+        <button id="btn_menu" class="btn_effect">
+          <span></span><span></span><span></span>
+        </button>
+      </section>
+      <!-- Header -->
+      <header
+        id="header_container"
+        class="px-4 border-r-[0.5px] border-gray-600 h-screen fixed menu_mobile md:relative md:basis-1/6 top-0 left-0 bg-gray-900"
+      >
+        <figure class="mb-3">
+          <img class="max-w-[200px]" src="../images/logo.png" alt="" />
+        </figure>
+        <section class="border-y-[0.5px] border-gray-600 py-4">
+          <div class="flex justify-between">
+            <figure class="flex gap-2">
+              <img
+                class="w-10 h-10 object-cover"
+                src="../images/iconheader.png"
+                alt=""
+              />
+              <figcaption>
+                <p>Admin</p>
+                <p>Hoài Nam</p>
+              </figcaption>
+            </figure>
+            <a href="http://">
+              <button
+                class="hover:bg-white hover:text-black ease-in duration-150 rounded-lg py-2 px-3 bg-gray-600 text-white"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+        <nav class="nav_menu">
+          <ul>
+            <li>
+              <a href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/catelog.html">
+                <i class="fa-solid fa-table-cells-large"></i>
+                <span>Catalog</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/html/user.html">
+                <i class="fa-solid fa-user-group"></i>
+                <span>User</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-earth-oceania"></i>
+                <span>Contries</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/showicon.html">
+                <i class="fa-solid fa-icons"></i>
+                <span>Icon</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-regular fa-comment"></i>
+                <span>Comment</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- end Header -->
+
+      <!-- Container -->
+      <main class="md:basis-5/6 basis-full sm:px-8 px-2 py-4 overflow-x-auto">
+        <section
+          class="flex flex-wrap items-center justify-between border-gray-600 border-b-[0.5px] pb-4 mb-3"
+        >
+          <h1 class="text-3xl font-semibold">Edit User</h1>
+        </section>
+        <article class="p-4 bg-[#151f30] rounded-2xl mb-4">
+          <div class="flex items-center justify-between flex-wrap gap-y-4">
+            <div class="flex gap-3 lg:basis-1/3 basis-full">
+              <img
+                src="http://flixtv.volkovdesign.com/admin/img/user.svg"
+                width="40"
+                height="40"
+                class="object-cover rounded-lg"
+                alt=""
+              />
+              <div>
+                <p><strong>UserName:</strong> <sub>(block)</sub></p>
+                <p class="text-xs"><strong>Id:</strong> #2211445555555555554</p>
+              </div>
+            </div>
+            <nav class="mr-auto pl-10">
+              <div class="flex relative sm:hidden">
+                <button id="name_menu-selector" class="text-base font-semibold">
+                  Profile
+                </button>
+                <button
+                  class="btn_effect min-w-[60px] h-[40px]"
+                  id="btn_filter"
+                >
+                  <span></span><span class="hideElement"></span>
+                  <span></span>
+                </button>
+                <nav class="absolute top-full z-[2] right-0">
+                  <ul
+                    id="menu_mobile"
+                    class="font-semibold text-slate-300 hideElement cursor-pointer min-w-[150px] bg-slate-900 rounded-2xl py-3 px-4"
+                  >
+                    <li data-menu="profile" class="active">Profile</li>
+                    <li data-menu="comment">Comments</li>
+                    <li data-menu="payment">TopUp</li>
+                  </ul>
+                </nav>
+              </div>
+              <ul
+                id="menu_tablet-large"
+                class="gap-3 sm:flex hidden user-menu user-menu_tablet-large"
+              >
+                <li data-menu="profile" class="active">Profile</li>
+                <li data-menu="comment">Comments</li>
+                <li data-menu="payment">TopUp</li>
+              </ul>
+            </nav>
+            <div class="btn_actions">
+              <button class="btn_lock"><i class="fa-solid fa-lock"></i></button>
+              <button class="btn__delete ml-2">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+        <section
+          class="border-gray-600 border-[0.5px] rounded-xl p-3 scroll_settings"
+        >
+          <!-- form change password anh show user detail -->
+          <div
+            id="profile"
+            class="content_menu grid sm:grid-cols-2 grid-cols-1 gap-3 bg-[#151F30]"
+          >
+            <form
+              class="grid lg:grid-cols-2 grid-cols-1 gap-x-3 gap-y-5 bg-[#131720] p-4 rounded-xl"
+            >
+              <h2 class="text-base font-bold mb-4 lg:col-span-2 col-span-1">
+                Profile details
+              </h2>
+              <div>
+                <label for="username">UserName</label>
+                <div>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                    class="input_style"
+                    value="namhoai"
+                  />
+                </div>
+              </div>
+              <!-- ------------- -->
+              <div>
+                <label for="fullname">FullName</label>
+                <div>
+                  <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    required
+                    class="input_style"
+                    value="namhoai"
+                  />
+                </div>
+              </div>
+              <!-- ------------- -->
+              <div>
+                <label for="permission">Permission</label>
+
+                <select
+                  id="permission"
+                  name="permission"
+                  class="input_style cursor-pointer"
+                  id=""
+                >
+                  <option value="">Mặc định</option>
+                  <option value="admin">Admin</option>
+                  <option value="vip">Vip</option>
+                  <option value="member">Member</option>
+                </select>
+              </div>
+              <!-- ------------- -->
+              <div>
+                <label for="vip">Vip</label>
+                <div>
+                  <input
+                    type="text"
+                    id="vip"
+                    name="vip"
+                    required
+                    class="input_style"
+                    value="10"
+                  />
+                </div>
+              </div>
+              <!-- ------------- -->
+              <div>
+                <label for="expLv">Total ExpLevel</label>
+                <div>
+                  <input
+                    type="text"
+                    id="expLv"
+                    name="expLv"
+                    required
+                    class="input_style"
+                    value="1200000"
+                  />
+                </div>
+              </div>
+              <!-- ------------- -->
+              <div>
+                <label for="coin">Coin</label>
+                <div>
+                  <input
+                    type="text"
+                    id="coin"
+                    name="coin"
+                    required
+                    class="input_style"
+                    value="100000"
+                  />
+                </div>
+              </div>
+              <!-- ------------- -->
+              <div class="icon_container lg:col-span-2 col-span-1">
+                <p>Icons</p>
+                <div class="flex flex-wrap gap-3 my-2">
+                  <div class="relative">
+                    <img
+                      width="40"
+                      height="40"
+                      src="https://movibes.online/icon/6367a254a6d14-1.png"
+                      class="icon_item"
+                      alt=""
+                    />
+                    <p
+                      class="absolute icon_item-flag bg-blue-600 py-1 px-3 min-w-[100px] text-center rounded-xl -top-full left-1/2 -translate-x-1/2"
+                    >
+                      Hổ Con
+                    </p>
+                    <span
+                      title="Delete icon"
+                      class="absolute -top-3 -right-1 cursor-pointer hover:text-red-500 hover:fill-white"
+                      ><i class="fa-solid fa-circle-xmark"></i
+                    ></span>
+                  </div>
+                </div>
+                <label>
+                  <input
+                    mbsc-input
+                    id="icons-input"
+                    placeholder="Icons"
+                    data-dropdown="true"
+                    data-input-style="outline"
+                    data-label-style="stacked"
+                    data-tags="true"
+                    required
+                  />
+                </label>
+                <select id="icons" name="icons" multiple>
+                  <option
+                    style="
+                      background-image: url(`https://movibes.online/icon/6367a254a6d14-1.png`);
+                    "
+                    value="1"
+                  >
+                    Hành Động
+                  </option>
+                  <option value="2">Hài kịch</option>
+                  <option value="3">Viển Tưởng</option>
+                  <option value="4">Cổ trang</option>
+                  <option value="5">Phiêu Lưu</option>
+                  <option value="6">Võ Thuật</option>
+                  <option value="7">Thần Thoại</option>
+                  <option value="8">Kind Điển</option>
+                  <option value="9">Chính Kịch</option>
+                  <option value="10">Bí ẩn</option>
+                  <option value="11">Tình Cảm</option>
+                  <option value="12">Tâm lý</option>
+                  <option value="13">Tôi Phạm</option>
+                  <option value="14">Hoạt Hình 3D</option>
+                  <option value="15">Hoạt Hình 2D</option>
+                </select>
+              </div>
+              <!-- ------------- -->
+              <div>
+                <label for="blocked">Trạng thái</label>
+                <select
+                  class="input_style cursor-pointer"
+                  name="blocked"
+                  id="blocked"
+                >
+                  <option value="true">Khóa</option>
+                  <option value="false">Mở Khóa</option>
+                </select>
+              </div>
+              <!-- ------------- -->
+              <div>
+                <label for="updatedAt">Updated Time</label>
+                <div>
+                  <input
+                    type="text"
+                    id="updatedAt"
+                    required
+                    class="input_style"
+                    readonly
+                    value="12/33/2022"
+                  />
+                </div>
+              </div>
+              <div class="lg:col-span-2 col-span-1 text-center">
+                <button
+                  class="py-2 px-3 rounded-xl bg-blue-700 text-gray-100 hover:bg-white hover:text-black ease-linear duration-100 sm:w-[200px] w-4/5"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+            <div
+              class="grid lg:grid-cols-2 grid-cols-1 gap-x-3 gap-y-5 bg-[#131720] p-4 rounded-xl max-h-[100vh]"
+            >
+              <h2 class="text-base font-bold mb-4 lg:col-span-2 col-span-1">
+                Change Password
+              </h2>
+              <!-- ------------- -->
+              <div>
+                <label for="password">New Password</label>
+                <div>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    class="input_style"
+                    placeholder="Enter new Password"
+                    value=""
+                  />
+                </div>
+              </div>
+              <!-- ------------- -->
+              <div>
+                <label for="rpassword">Confirm Password</label>
+                <div>
+                  <input
+                    type="password"
+                    id="rpassword"
+                    name="rpassword"
+                    required
+                    class="input_style"
+                    placeholder="Enter Confirm Password"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="lg:col-span-2 col-span-1 text-center">
+                <button
+                  class="py-2 px-3 rounded-xl bg-blue-700 text-gray-100 hover:bg-white hover:text-black ease-linear duration-100 sm:w-[200px] w-4/5"
+                >
+                  Change Password
+                </button>
+              </div>
+              <form
+                class="flex flex-col justify-center items-center lg:col-span-2 col-span-1"
+                action="
+              "
+              >
+                <label
+                  for="avata"
+                  class="m-auto border-2 border-dashed border-white flex flex-1 bg-[#151F30] w-full h-full min-h-[100px] relative cursor-pointer"
+                >
+                  <div class="m-auto">Change Avata</div>
+                  <figure
+                    class="absolute z-[1] gap-1 grid md:grid-cols-1 grid-cols-3"
+                  >
+                    <img
+                      class="w-full object-cover col-span-1"
+                      id="avata"
+                      src=""
+                      alt=""
+                    />
+                  </figure>
+                </label>
+                <input id="avata" type="file" name="avata" class="hidden" />
+                <button
+                  class="py-2 px-3 mt-4 rounded-xl bg-blue-700 text-gray-100 hover:bg-white hover:text-black ease-linear duration-100 sm:w-[200px] w-4/5"
+                >
+                  Change Avata
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- end form change password anh show user detail -->
+
+          <!-- show comment list -->
+
+          <div id="comment" class="content_menu bg-[#131720] hideElement">
+            <table class="table w-full text-center p-2" id="table_container">
+              <thead class="text-base font-bold text-slate-400">
+                <tr>
+                  <td><div class="whitespace-nowrap px-2">Id</div></td>
+                  <td><div class="whitespace-nowrap px-2">Author</div></td>
+                  <td><div class="whitespace-nowrap px-2">Text</div></td>
+                  <td><div class="whitespace-nowrap px-2">Level</div></td>
+                  <td><div class="whitespace-nowrap px-2">Like</div></td>
+                  <td>
+                    <div class="whitespace-nowrap px-2">Created Date</div>
+                  </td>
+                  <td
+                    colspan="2
+                  "
+                  >
+                    <div class="my-3">Actions</div>
+                  </td>
+                </tr>
+              </thead>
+              <tbody c>
+                <tr
+                  class="bg-[#151F30] border-y-[10px] border-[#131720] rounded-3xl"
+                >
+                  <td>
+                    <div
+                      class="max-w-[80px] overflow-auto scroll_with-none mt-4 mx-2"
+                    >
+                      #asdsdasdasda
+                    </div>
+                  </td>
+                  <td>hoài Nam</td>
+                  <td>
+                    <div
+                      class="whitespace-nowrap text-ellipsis overflow-hidden max-w-[120px] py-4"
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Rerum aspernatur amet, architecto dolor aliquid magni
+                      perferendis excepturi quis ipsa esse praesentium tenetur
+                      vero quidem temporibus repellendus pariatur hic.
+                      Consequuntur, ad!
+                    </div>
+                  </td>
+                  <td>hoài Nam</td>
+                  <td>12</td>
+                  <td>hoài Nam</td>
+                  <td class="btn_actions">
+                    <div class="min-w-[160px]">
+                      <button class="btn_view">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+
+                      <button class="btn_delete">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="paginationjs">
+              <nav>
+                <ul class="flex gap-2 items-center justify-center">
+                  <li class="active">
+                    <a href="">1</a>
+                  </li>
+                  <li>
+                    <a href="">2</a>
+                  </li>
+                  <li>
+                    <a href="">3</a>
+                  </li>
+                  <li>
+                    <a href="">4</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <!--end show comment list -->
+
+          <!-- show payment -->
+          <div id="payment" class="content_menu bg-[#131720] hideElement">
+            <table class="table w-full text-center p-2" id="table_container">
+              <thead class="text-base font-bold text-slate-400">
+                <tr>
+                  <td><div class="whitespace-nowrap px-2">ID</div></td>
+                  <td><div class="whitespace-nowrap px-2">Username</div></td>
+                  <td><div class="whitespace-nowrap px-2">Payment</div></td>
+                  <td><div class="whitespace-nowrap px-2">Money</div></td>
+                  <td><div class="whitespace-nowrap px-2">Status</div></td>
+                  <td>
+                    <div class="whitespace-nowrap px-2">Created Date</div>
+                  </td>
+                  <td
+                    colspan="4
+                  "
+                  >
+                    <div class="my-3">Actions</div>
+                  </td>
+                </tr>
+              </thead>
+              <tbody c>
+                <tr
+                  class="bg-[#151F30] border-y-[10px] border-[#131720] rounded-3xl"
+                >
+                  <td>
+                    <div
+                      class="max-w-[80px] overflow-auto scroll_with-none mt-4 mx-2"
+                    >
+                      #asdsdasdasda
+                    </div>
+                  </td>
+                  <td>hoài Nam</td>
+
+                  <td>hoài Nam</td>
+                  <td>12</td>
+                  <td>Thành công</td>
+                  <td>hoài Nam</td>
+                  <td class="btn_actions">
+                    <div class="min-w-[160px]">
+                      <button title="Đồng ý" class="btn_agree">
+                        <i class="fa-solid fa-handshake"></i>
+                      </button>
+                      <button title="Thất bại" class="btn_agree">
+                        <i class="fa-solid fa-heart-crack"></i>
+                      </button>
+
+                      <button title="View" class="btn_view">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+
+                      <button title="Xóa" class="btn_delete">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="paginationjs">
+              <nav>
+                <ul class="flex gap-2 items-center justify-center">
+                  <li class="active">
+                    <a href="">1</a>
+                  </li>
+                  <li>
+                    <a href="">2</a>
+                  </li>
+                  <li>
+                    <a href="">3</a>
+                  </li>
+                  <li>
+                    <a href="">4</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <!-- end show payment -->
+        </section>
+      </main>
+      <!--End Container -->
+    </div>
+
+    <!-- hideElement -> hide-->
+    <div
+      id="modal_status"
+      class="modal fixed inset-0 h-screen flex hideElement bg-[rgba(0,0,0,0.6)]"
+    >
+      <section
+        class="max-w-[400px] min-h-[200px] max-h-[400px] rounded-2xl p-7 bg-[#151F30] m-auto relative modal-content"
+      >
+        <h6 class="modal__title text-3xl text-center font-semibold pb-3">
+          Status change
+        </h6>
+        <p class="text-sm text-center">
+          Are you sure about immediately change status?
+        </p>
+        <div class="modal__btns mt-4 flex gap-3">
+          <button
+            class="modal__btn--apply min-w-[160px] bg-[#2f80ed] hover:text-green-700 hover:bg-[#fff] py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Apply
+          </button>
+          <button
+            class="modal__btn--dismiss min-w-[160px] bg-gray-700 hover:text-red-400 py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Dismiss
+          </button>
+        </div>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+
+    <!-- hideElement -> hide-->
+    <div
+      id="modal_views"
+      class="modal hideElement fixed inset-0 flex bg-[rgba(0,0,0,0.6)]"
+    >
+      <section
+        class="min-h-[30vh] rounded-2xl p-7 bg-[#131720] shadow shadow-[#435858] m-auto relative modal-content"
+      >
+        <div class="flex gap-3 mb-2">
+          <img
+            src="http://flixtv.volkovdesign.com/admin/img/user.svg"
+            width="40"
+            height="40"
+            class="object-cover rounded-lg"
+            alt=""
+          />
+          <div>
+            <p><strong>Auhor:</strong> <sub>Hoài Nam</sub></p>
+            <p class="text-base">18/12/2022 23:12:2002</p>
+          </div>
+        </div>
+
+        <!-- View Comnment -->
+        <article
+          id="view_container"
+          class="lg:max-w-[600px] sm:max-w-[400px] w-full mt-4 text-sm"
+        >
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don't look even slightly believable.
+          If you are going to use a passage of Lorem Ipsum, you need to be sure
+          there isn't anything embarrassing hidden in the middle of text.
+        </article>
+        <!-- end Comnment -->
+        <article
+          class="lg:max-w-[600px] sm:max-w-[400px] hideElement w-full mt-4 text-sm"
+        >
+          <h2 class="mb-2 text-xl text-center font-bold">TopUp Detail</h2>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label for="idpaycode"> ID </label>
+              <input
+                type="text"
+                readonly
+                class="input_style"
+                value="#1212121221"
+                id="idpaycode"
+              />
+            </div>
+            <div>
+              <label for="paycode">Payment </label>
+              <input type="text" readonly class="input_style" value="PayPal" />
+            </div>
+            <div>
+              <label for="paycode"> Pay Code </label>
+              <input
+                type="text"
+                readonly
+                class="input_style"
+                value="152001210"
+                id="paycode"
+              />
+            </div>
+            <div>
+              <label for="Seri"> Seri </label>
+              <input
+                type="text"
+                readonly
+                id="Seri"
+                class="input_style"
+                value="152001210"
+              />
+            </div>
+            <div>
+              <label for="Money"> Money </label>
+              <input
+                type="text"
+                readonly
+                id="Money"
+                class="input_style"
+                value="152001210"
+              />
+            </div>
+            <div>
+              <label for="Status"> Status </label>
+              <input
+                type="text"
+                readonly
+                id="Status"
+                class="input_style"
+                value="152001210"
+              />
+            </div>
+            <div>
+              <label for="CreateAt"> CreateAt </label>
+              <input
+                type="text"
+                readonly
+                id="CreateAt"
+                class="input_style"
+                value="152001210"
+              />
+            </div>
+            <div>
+              <label for="UpdateAt"> UpdateAt </label>
+              <input
+                type="text"
+                readonly
+                id="UpdateAt"
+                class="input_style"
+                value="152001210"
+              />
+            </div>
+          </div>
+        </article>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+
+  <script type="module" src="../js/adduser.js"></script>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/iconheader.png"
+      type="image/x-icon"
+    />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+  <body>
+    <div class="app flex text-text font-sans flex-wrap md:flex-nowrap">
+      <section class="w-full flex items-center justify-between px-4 md:hidden">
+        <figure>
+          <img class="max-w-[200px]" src="./images/logo.png" />
+        </figure>
+        <button id="btn_menu" class="btn_effect">
+          <span></span><span></span><span></span>
+        </button>
+      </section>
+      <!-- Header -->
+      <header
+        id="header_container"
+        class="px-4 border-r-[0.5px] border-gray-600 h-screen fixed menu_mobile md:relative md:basis-1/6 top-0 left-0 bg-gray-900"
+      >
+        <figure class="mb-3">
+          <img class="max-w-[200px]" src="./images//logo.png" />
+        </figure>
+        <section class="border-y-[0.5px] border-gray-600 py-4">
+          <div class="flex justify-between">
+            <figure class="flex gap-2">
+              <img
+                class="w-10 h-10 object-cover"
+                src="./images/iconheader.png"
+                alt=""
+              />
+              <figcaption>
+                <p>Admin</p>
+                <p>Hoài Nam</p>
+              </figcaption>
+            </figure>
+            <a href="/">
+              <button
+                class="hover:bg-white hover:text-black ease-in duration-150 rounded-lg py-2 px-3 bg-gray-600 text-white"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+        <nav class="nav_menu">
+          <ul>
+            <li>
+              <a href="/">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/catelog.html">
+                <i class="fa-solid fa-table-cells-large"></i>
+                <span>Catalog</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/html/user.html">
+                <i class="fa-solid fa-user-group"></i>
+                <span>User</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-earth-oceania"></i>
+                <span>Contries</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/showicon.html">
+                <i class="fa-solid fa-icons"></i>
+                <span>Icon</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-regular fa-comment"></i>
+                <span>Comment</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- end Header -->
+
+      <!-- Container -->
+      <main class="md:basis-5/6 basis-full px-8 py-4">
+        <section
+          class="flex justify-between border-gray-600 border-b-[0.5px] pb-4 mb-3"
+        >
+          <h1 class="text-3xl font-semibold">Dashboard</h1>
+          <a href="http://">
+            <button
+              class="py-2 px-3 rounded-xl bg-blue-700 text-gray-100 hover:bg-white hover:text-black ease-linear duration-100"
+            >
+              ADD Item
+            </button>
+          </a>
+        </section>
+        <!-- Show statistics Container -->
+        <div
+          class="statistics_container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 my-8"
+        >
+          <section class="statistics">
+            <h3>New Views</h3>
+            <p class="flex justify-between">
+              <span class="text-xl font-bold"> 5 698 </span
+              ><i class="fa-solid fa-eye text-blue-700 text-3xl"></i>
+            </p>
+          </section>
+          <section class="statistics">
+            <h3>New Items</h3>
+            <p class="flex justify-between">
+              <span class="text-xl font-bold"> 172 </span
+              ><i
+                class="fa-solid fa-file-circle-plus text-blue-700 text-3xl"
+              ></i>
+            </p>
+          </section>
+          <section class="statistics">
+            <h3>New Commemt</h3>
+            <p class="flex justify-between">
+              <span class="text-xl font-bold"> 5 698 </span
+              ><i
+                class="fa-solid fa-comment-medical text-blue-700 text-3xl"
+              ></i>
+            </p>
+          </section>
+          <section class="statistics">
+            <h3>New Account</h3>
+            <p class="flex justify-between">
+              <span class="text-xl font-bold"> 5 698 </span
+              ><i class="fa-solid fa-user-plus text-blue-700 text-3xl"></i>
+            </p>
+          </section>
+        </div>
+        <!--end Show statistics Container -->
+        <div class="analysis grid grid-cols-1 lg:grid-cols-2 gap-3 my-8">
+          <section>
+            <div
+              class="flex justify-between my-4 border-b-[0.5px] border-gray-700 py-2"
+            >
+              <h4>
+                <i class="fa-regular fa-chart-bar text-blue-800"></i> Top films
+              </h4>
+              <a href="http://"
+                ><button
+                  class="bg-slate-900 p-2 rounded-sm hover:text-slate-500 text-sm"
+                >
+                  View all
+                </button></a
+              >
+            </div>
+            <table class="w-full text-center">
+              <thead>
+                <tr class="text-lg text-gray-400 font-bold">
+                  <td>Id</td>
+                  <td>Like</td>
+                  <td>Views</td>
+                  <td>Rating</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="max-w-[60px] overflow-auto scroll_with-none">
+                    #642442a5a9ac56f68863b216
+                  </td>
+                  <td>100</td>
+                  <td>VietSub</td>
+                  <td><i class="fa-regular fa-star text-blue-800"></i> 4.3</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <div
+              class="flex justify-between my-4 border-b-[0.5px] border-gray-700 py-2"
+            >
+              <h4>
+                <i class="fa-solid fa-table-cells-large text-blue-800"></i>
+                Latest films
+              </h4>
+              <a href="http://"
+                ><button
+                  class="bg-slate-900 p-2 rounded-sm hover:text-slate-500 text-sm"
+                >
+                  View all
+                </button></a
+              >
+            </div>
+            <table class="w-full text-center">
+              <thead>
+                <tr class="text-lg text-gray-400 font-bold">
+                  <td>Id</td>
+                  <td>Like</td>
+                  <td>Views</td>
+                  <td>Rating</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="max-w-[60px] overflow-auto scroll_with-none">
+                    642442a5a9ac56f68863b216
+                  </td>
+                  <td>100</td>
+                  <td>12000</td>
+                  <td><i class="fa-regular fa-star text-blue-800"></i> 4.3</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <div
+              class="flex justify-between my-4 border-b-[0.5px] border-gray-700 py-2"
+            >
+              <h4>
+                <i class="fa-solid fa-user-clock text-green-600"></i> Top users
+              </h4>
+              <a href="http://"
+                ><button
+                  class="bg-slate-900 p-2 rounded-sm hover:text-slate-500 text-sm"
+                >
+                  View all
+                </button></a
+              >
+            </div>
+            <table class="w-full text-center">
+              <thead>
+                <tr class="text-lg text-gray-400 font-bold">
+                  <td>Username</td>
+                  <td>Permission</td>
+                  <td>Vip</td>
+                  <td>Coin</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="max-w-[60px] overflow-auto scroll_with-none">
+                    hoainam
+                  </td>
+                  <td>vip</td>
+                  <td>Vip 2</td>
+                  <td><i class="fa-solid fa-coins text-yellow-400"></i> 4.3</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <div
+              class="flex justify-between my-4 border-b-[0.5px] border-gray-700 py-2"
+            >
+              <h4><i class="fa-solid fa-coins text-yellow-500"></i> Top Up</h4>
+              <a href="http://"
+                ><button
+                  class="bg-slate-900 p-2 rounded-sm hover:text-slate-500 text-sm"
+                >
+                  View all
+                </button></a
+              >
+            </div>
+            <table class="w-full text-center">
+              <thead>
+                <tr class="text-lg text-gray-400 font-bold">
+                  <td>Pay Code</td>
+                  <td>Kind</td>
+                  <td>Money</td>
+                  <td>Status</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="max-w-[60px] overflow-auto scroll_with-none">
+                    23D05474PM3926946
+                  </td>
+                  <td>PayPal</td>
+                  <td>120000</td>
+                  <td>Thành công</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </main>
+      <!--End Container -->
+    </div>
+
+    <!-- Modal status  id modal_status if have  hideElement -> hidden else show -->
+    <div
+      id="modal_status"
+      class="modal fixed inset-0 h-screen flex hideElement bg-[rgba(0,0,0,0.6)]"
+    >
+      <section
+        class="max-w-[400px] min-h-[200px] max-h-[400px] rounded-2xl p-7 bg-[#151F30] m-auto relative modal-content"
+      >
+        <h6 class="modal__title text-3xl text-center font-semibold pb-3">
+          Status change
+        </h6>
+        <p class="text-sm text-center">
+          Are you sure about immediately change status?
+        </p>
+        <div class="modal__btns mt-4 flex gap-3">
+          <button
+            class="modal__btn--apply min-w-[160px] bg-[#2f80ed] hover:text-green-700 hover:bg-[#fff] py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Apply
+          </button>
+          <button
+            class="modal__btn--dismiss min-w-[160px] bg-gray-700 hover:text-red-400 py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Dismiss
+          </button>
+        </div>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+
+    <!-- Modal status  id modal_status if have class flex -> show else  hidden -> hide -->
+    <div
+      id="modal_views"
+      class="modal fixed inset-0 flex hideElement bg-[rgba(0,0,0,0.6)]"
+    >
+      <section
+        class="min-h-[80vh] rounded-2xl p-7 bg-[#131720] shadow shadow-[#435858] m-auto relative modal-content"
+      >
+        <h6 class="text-center pb-4 text-2xl">Thông tin chi tiết</h6>
+        <figure class="flex flex-col items-center mb-4">
+          <a href="http://">
+            <img
+              class="w-[50px] object-cover"
+              src="https://movibes.online/avata/636939627d4a2-thon-phe-tinh-khong-thumb.jpg"
+              alt=""
+            />
+          </a>
+          <figcaption class="text-sm">Thôn phệ tinh không</figcaption>
+        </figure>
+        <article class="grid grid-cols-2 gap-2">
+          <div>
+            <span class="px-2">Id:</span>
+            <div>
+              <input
+                class="input_style w-full"
+                readonly
+                value="#dsadsadsadsasdadsa"
+              />
+            </div>
+          </div>
+          <div>
+            <span class="px-2">Origin Name:</span>
+            <div>
+              <input
+                class="input_style w-full"
+                readonly
+                value="SADsadsa dsadsa"
+              />
+            </div>
+          </div>
+          <div class="col-span-2">
+            <span class="px-2">category:</span>
+            <div class="modal_views-category">
+              <span>Hành động</span>
+              <span>Phiêu Lưu</span>
+              <span>Xuyên Không</span>
+              <span>Hài Kịch</span>
+              <span>Phiêu Lưu</span>
+              <span>Xuyên Không</span>
+              <span>Hài Kịch</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 col-span-2">
+            <div>
+              <span class="px-2">Kind:</span>
+              <div>
+                <input class="input_style w-full" readonly value="Fearture" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">Views:</span>
+              <div>
+                <input class="input_style w-full" readonly value="12,000,000" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">Like:</span>
+              <div>
+                <input class="input_style w-full" readonly value="15,000,000" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">time:</span>
+              <div>
+                <input class="input_style w-full" readonly value="15 phút" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">Years:</span>
+              <div>
+                <input class="input_style w-full" readonly value="2000" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">Status:</span>
+              <div>
+                <input class="input_style w-full" readonly value="Compelete" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <span class="px-2">CreateAt:</span>
+            <div>
+              <input class="input_style w-full" readonly value="23/04/2023" />
+            </div>
+          </div>
+          <div>
+            <span class="px-2">UpdateAt:</span>
+            <div>
+              <input class="input_style w-full" readonly value="25/05/2024" />
+            </div>
+          </div>
+        </article>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+  </body>
+  <script type="module" src="./js/style..module.js"></script>
+</html>

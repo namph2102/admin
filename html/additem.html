@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/catelog.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- Select Mutipat -->
+    <link href="../css/mobiscroll.javascript.min.css" rel="stylesheet" />
+    <script src="../js/mobiscroll.javascript.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../images/iconheader.png"
+      type="image/x-icon"
+    />
+    <title>Addfilm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+    .mbsc-textfield.mbsc-textfield-tags.mbsc-textarea {
+      background-color: #151f30;
+      color: #fff;
+    }
+    .mbsc-ios.mbsc-textfield-tag {
+      background: #38127b;
+    }
+    .mbsc-ios.mbsc-textfield-wrapper-outline {
+      margin: 0;
+    }
+  </style>
+  <body>
+    <div class="app flex text-text font-sans flex-wrap md:flex-nowrap">
+      <section class="w-full flex items-center justify-between px-4 md:hidden">
+        <figure>
+          <img class="max-w-[200px]" src="../images/logo.png" alt="" />
+        </figure>
+        <button id="btn_menu" class="btn_effect">
+          <span></span><span></span><span></span>
+        </button>
+      </section>
+      <!-- Header -->
+      <header
+        id="header_container"
+        class="px-4 border-r-[0.5px] border-gray-600 h-screen fixed menu_mobile md:relative md:basis-1/6 top-0 left-0 bg-gray-900"
+      >
+        <figure class="mb-3">
+          <img class="max-w-[200px]" src="../images/logo.png" alt="" />
+        </figure>
+        <section class="border-y-[0.5px] border-gray-600 py-4">
+          <div class="flex justify-between">
+            <figure class="flex gap-2">
+              <img
+                class="w-10 h-10 object-cover"
+                src="../images/iconheader.png"
+                alt=""
+              />
+              <figcaption>
+                <p>Admin</p>
+                <p>Hoài Nam</p>
+              </figcaption>
+            </figure>
+            <a href="http://">
+              <button
+                class="hover:bg-white hover:text-black ease-in duration-150 rounded-lg py-2 px-3 bg-gray-600 text-white"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </a>
+          </div>
+        </section>
+        <nav class="nav_menu">
+          <ul>
+            <li>
+              <a href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/catelog.html">
+                <i class="fa-solid fa-table-cells-large"></i>
+                <span>Catalog</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="/html/user.html">
+                <i class="fa-solid fa-user-group"></i>
+                <span>User</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-earth-oceania"></i>
+                <span>Contries</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/showicon.html">
+                <i class="fa-solid fa-icons"></i>
+                <span>Icon</span>
+              </a>
+            </li>
+            <li>
+              <a href="/html/country.html">
+                <i class="fa-regular fa-comment"></i>
+                <span>Comment</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- end Header -->
+
+      <!-- Container -->
+      <main class="md:basis-5/6 basis-full sm:px-8 px-2 py-4 overflow-x-auto">
+        <section
+          class="flex flex-wrap items-center justify-between border-gray-600 border-b-[0.5px] pb-4 mb-3"
+        >
+          <h1 class="text-3xl font-semibold">Add New Film</h1>
+        </section>
+        <section class="border-gray-600 border-[0.5px] rounded-xl p-2">
+          <form
+            action="http://localhost:3000/additem"
+            class="flex flex-wrap gap-y-4"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="lg:basis-1/4 md:basis-1/2 basis-full flex md:pr-3">
+              <label
+                for="thumb"
+                class="m-auto flex flex-1 h-full bg-[#151F30] min-w-[190px] min-h-[130px] sm:min-h-[290px] relative cursor-pointer"
+              >
+                <div class="m-auto">Upload Thumb</div>
+                <figure
+                  class="absolute z-[1] gap-1 grid md:grid-cols-1 grid-cols-3"
+                >
+                  <img
+                    class="w-full object-cover col-span-1"
+                    id="thumbimg"
+                    src=""
+                    alt=""
+                  />
+
+                  <img
+                    id="posterimg"
+                    class="w-full object-cover md:col-span-1 col-span-2"
+                    src=""
+                    alt=""
+                  />
+                </figure>
+              </label>
+              <input id="thumb" type="file" name="thumb" class="hidden" />
+            </div>
+            <div
+              class="lg:basis-3/4 md:basis-1/2 basis-full flex flex-col gap-y-3"
+            >
+              <input
+                required
+                type="text"
+                class="input_style"
+                placeholder="Title"
+                name="name"
+              />
+              <input
+                required
+                type="text"
+                class="input_style"
+                placeholder="Origin Name"
+                name="origin_name"
+              />
+              <textarea
+                name=""
+                id=""
+                class="bg-[#151F30] border-none outline-none px-2 py-1"
+                placeholder="Description"
+                name="description"
+                rows="4"
+                required
+              ></textarea>
+
+              <div class="Category_container">
+                <label>
+                  <input
+                    mbsc-input
+                    id="categories-input"
+                    placeholder="Category"
+                    data-dropdown="true"
+                    data-input-style="outline"
+                    data-label-style="stacked"
+                    data-tags="true"
+                    required
+                  />
+                </label>
+                <select id="categories" name="categories" multiple>
+                  <option value="1">Hành Động</option>
+                  <option value="2">Hài kịch</option>
+                  <option value="3">Viển Tưởng</option>
+                  <option value="4">Cổ trang</option>
+                  <option value="5">Phiêu Lưu</option>
+                  <option value="6">Võ Thuật</option>
+                  <option value="7">Thần Thoại</option>
+                  <option value="8">Kind Điển</option>
+                  <option value="9">Chính Kịch</option>
+                  <option value="10">Bí ẩn</option>
+                  <option value="11">Tình Cảm</option>
+                  <option value="12">Tâm lý</option>
+                  <option value="13">Tôi Phạm</option>
+                  <option value="14">Hoạt Hình 3D</option>
+                  <option value="15">Hoạt Hình 2D</option>
+                </select>
+              </div>
+              <div class="grid lg:grid-cols-4 grid-cols-2 gap-2">
+                <input
+                  type="text"
+                  class="input_style"
+                  placeholder="time"
+                  name="Time"
+                  required
+                />
+                <input
+                  type="text"
+                  class="input_style"
+                  placeholder="Year"
+                  name="year"
+                  required
+                />
+                <input
+                  type="text"
+                  class="input_style"
+                  placeholder="Country"
+                  name="country"
+                  required
+                />
+              </div>
+              <div class="grid lg:grid-cols-4 grid-cols-2 gap-2">
+                <select
+                  name="kind"
+                  class="input_style cursor-pointer"
+                  id="kind"
+                  required
+                >
+                  <option value="feature">Kind</option>
+                  <option value="feature">Feature</option>
+                  <option value="series">Series</option>
+                </select>
+                <select
+                  name="status"
+                  class="input_style cursor-pointer"
+                  id="status"
+                  required
+                >
+                  <option value="completed">Status</option>
+                  <option value="completed">completed</option>
+                  <option value="uncompeleted">UnCompleted</option>
+                </select>
+                <select
+                  name="quanlity"
+                  class="input_style cursor-pointer"
+                  id="quanlity"
+                  required
+                >
+                  <option value="HD">Quanlity</option>
+                  <option value="HD">HD</option>
+                  <option value="Full HD">Full HD</option>
+                </select>
+                <select
+                  name="lang"
+                  class="input_style cursor-pointer"
+                  id="lang"
+                  required
+                >
+                  <option value="VietSub">Lang</option>
+                  <option value="VietSub">VietSub</option>
+                  <option value="Thuyết Minh">Thuyết Minh</option>
+                  <option value="Lồng Tiếng">Lồng Tiếng</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="poster"
+                  class="bg-[#151F30] w-100 h-10 rounded-xl flex items-center justify-between px-4 text-sm cursor-pointer"
+                >
+                  <span>Upload Poster</span>
+                  <i class="fa-solid fa-link"></i>
+                </label>
+
+                <input type="file" name="poster" hidden id="poster" />
+              </div>
+            </div>
+            <div class="basis-full text-center">
+              <button
+                class="py-2 px-3 rounded-xl bg-blue-700 text-gray-100 hover:bg-white hover:text-black ease-linear duration-100 sm:w-[200px] w-4/5"
+              >
+                PUSLISH
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+      <!--End Container -->
+    </div>
+
+    <!-- Modal status  id modal_status if have  hideElement -> hidden else show -->
+    <div
+      id="modal_status"
+      class="modal fixed inset-0 h-screen flex hideElement bg-[rgba(0,0,0,0.6)]"
+    >
+      <section
+        class="max-w-[400px] min-h-[200px] max-h-[400px] rounded-2xl p-7 bg-[#151F30] m-auto relative modal-content"
+      >
+        <h6 class="modal__title text-3xl text-center font-semibold pb-3">
+          Status change
+        </h6>
+        <p class="text-sm text-center">
+          Are you sure about immediately change status?
+        </p>
+        <div class="modal__btns mt-4 flex gap-3">
+          <button
+            class="modal__btn--apply min-w-[160px] bg-[#2f80ed] hover:text-green-700 hover:bg-[#fff] py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Apply
+          </button>
+          <button
+            class="modal__btn--dismiss min-w-[160px] bg-gray-700 hover:text-red-400 py-2 rounded-2xl text-base h-10"
+            type="button"
+          >
+            Dismiss
+          </button>
+        </div>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+
+    <!-- Modal status  id modal_status if have class flex -> show else  hidden -> hide -->
+    <div
+      id="modal_views"
+      class="modal fixed inset-0 flex hideElement bg-[rgba(0,0,0,0.6)]"
+    >
+      <section
+        class="min-h-[80vh] rounded-2xl p-7 bg-[#131720] shadow shadow-[#435858] m-auto relative modal-content"
+      >
+        <h6 class="text-center pb-4 text-2xl">Thông tin chi tiết</h6>
+        <figure class="flex flex-col items-center mb-4">
+          <a href="http://">
+            <img
+              class="w-[50px] object-cover"
+              src="https://movibes.online/avata/636939627d4a2-thon-phe-tinh-khong-thumb.jpg"
+              alt=""
+            />
+          </a>
+          <figcaption class="text-sm">Thôn phệ tinh không</figcaption>
+        </figure>
+        <article class="grid grid-cols-2 gap-2">
+          <div>
+            <span class="px-2">Id:</span>
+            <div>
+              <input
+                class="input_style w-full"
+                readonly
+                value="#dsadsadsadsasdadsa"
+              />
+            </div>
+          </div>
+          <div>
+            <span class="px-2">Origin Name:</span>
+            <div>
+              <input
+                class="input_style w-full"
+                readonly
+                value="SADsadsa dsadsa"
+              />
+            </div>
+          </div>
+          <div class="col-span-2">
+            <span class="px-2">category:</span>
+            <div class="modal_views-category">
+              <span>Hành động</span>
+              <span>Phiêu Lưu</span>
+              <span>Xuyên Không</span>
+              <span>Hài Kịch</span>
+              <span>Phiêu Lưu</span>
+              <span>Xuyên Không</span>
+              <span>Hài Kịch</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 col-span-2">
+            <div>
+              <span class="px-2">Kind:</span>
+              <div>
+                <input class="input_style w-full" readonly value="Fearture" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">Views:</span>
+              <div>
+                <input class="input_style w-full" readonly value="12,000,000" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">Like:</span>
+              <div>
+                <input class="input_style w-full" readonly value="15,000,000" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">time:</span>
+              <div>
+                <input class="input_style w-full" readonly value="15 phút" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">Years:</span>
+              <div>
+                <input class="input_style w-full" readonly value="2000" />
+              </div>
+            </div>
+            <div>
+              <span class="px-2">Status:</span>
+              <div>
+                <input class="input_style w-full" readonly value="Compelete" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <span class="px-2">CreateAt:</span>
+            <div>
+              <input class="input_style w-full" readonly value="23/04/2023" />
+            </div>
+          </div>
+          <div>
+            <span class="px-2">UpdateAt:</span>
+            <div>
+              <input class="input_style w-full" readonly value="25/05/2024" />
+            </div>
+          </div>
+        </article>
+        <button
+          title="Close (Esc)"
+          type="button"
+          class="absolute -top-2 right-1 text-4xl hover:text-red-500 btn_close-modal"
+        >
+          ×
+        </button>
+      </section>
+    </div>
+    <!-- End Modal -->
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+
+  <script type="module" src="../js/additem.js"></script>
+</html>
